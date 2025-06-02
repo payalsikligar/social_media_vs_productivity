@@ -5,8 +5,8 @@ import joblib
 import matplotlib.pyplot as plt
 
 #load the trained model
-model= joblib.load(r"C:\Users\abc\OneDrive\Desktop\streamlit\socialmedia_vs_productivity (2).pkl")
-scaler = joblib.load("minmax_scaler.pkl")
+model= joblib.load(r"C:\Users\abc\OneDrive\Desktop\streamlit\socialmedia vs productivity.pkl")
+scaler = joblib.load(r"C:\Users\abc\OneDrive\Desktop\streamlit\minmax_scaler.pkl")
 # Print the expected feature names
 print(scaler.feature_names_in_)
 
@@ -30,9 +30,12 @@ coffee_consumption = st.slider("Cups of Coffee per Day", 0, 10, 2)
 days_feeling_burnout = st.slider("Burnout Days per Month", 0, 31, 15)
 weekly_offline_hours = st.slider("Weekly Offline Hours", 0.0, 40.0, 10.3)
 job_satisfaction = st.slider("Job Satisfaction (1–10)", 0.0, 10.0, 5.0)
+productivity_score = st.slider("Daily Productivity Score",2,8,5)
+
 
 gender = st.selectbox("Gender", ["Male", "Female"])
 gender_encoded = 1 if gender == "Male" else 0
+
 
 job_type = st.selectbox("Job Type", ["Unemployed", "IT", "Finance", "Student", "Education", "Health"])
 job_type_encoded = {
@@ -67,13 +70,15 @@ categorical_values = [gender_encoded, job_type_encoded, social_platform_encoded,
 numerical_input = np.array([[age, socialmedia_time, notifications, work_hours_day,
                              stress_level, sleep_hours, screentime_before_sleep,
                              breaks, coffee_consumption, days_feeling_burnout,
-                             weekly_offline_hours, job_satisfaction]])
+                             weekly_offline_hours, job_satisfaction, productivity_score]])
 
 # Scale numerical features
 scaled_input = scaler.transform(numerical_input)
 
 # Combine with encoded categorical features
-final_input = np.hstack((scaled_numerical, categorical_values))
+final_input = np.hstack((scaled_input, np.array(categorical_values).reshape(1, -1)))
+
+
                              
 # Predict
 if st.button("Predict Productivity Score"):
@@ -96,3 +101,5 @@ if st.button("Predict Productivity Score"):
 st.markdown("---")
 st.caption("🔍 Model: XGBoost | Scaler: MinMax | Dataset: Kaggle - Social Media vs Productivity")
 
+print("Scaled input shape:", scaled_input.shape)
+print("Final input shape:", final_input.shape)
