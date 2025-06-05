@@ -1,15 +1,4 @@
 adal==1.2.7
-aext-assistant @ file:///C:/b/abs_98xvdek9qa/croot/aext-assistant_1734644152369/work
-aext-assistant-server @ file:///C:/b/abs_93twy7n40b/croot/aext-assistant-server_1734640405857/work
-aext-core @ file:///C:/b/abs_73k82brgp5/croot/aext-core_1734637800697/work
-aext-core-server @ file:///C:/b/abs_e3xgm257mx/croot/aext-core-server_1734635079146/work
-aext-panels @ file:///C:/b/abs_e40tdjfcpq/croot/aext-panels_1734643464834/work
-aext-panels-server @ file:///C:/b/abs_546lo5c36i/croot/aext-panels-server_1734640142498/work
-aext-project-filebrowser-server @ file:///C:/b/abs_11ixe7hbzm/croot/aext-project-filebrowser-server_1734687629540/work/backend_lib/project_filebrowser
-aext-share-notebook @ file:///C:/b/abs_fewa44_d8o/croot/aext-share-notebook_1734642886563/work
-aext-share-notebook-server @ file:///C:/b/abs_3dkdp713ad/croot/aext-share-notebook-server_1734639662890/work
-aext-shared @ file:///C:/b/abs_6bq_wjfbhn/croot/aext-shared_1734628822229/work
-aext-toolbox @ file:///C:/b/abs_8ehb5u9xv_/croot/anaconda-toolbox_1734694573015/work
 aiobotocore @ file:///C:/b/abs_a0zxrsvpwx/croot/aiobotocore_1714464454692/work
 aiohappyeyeballs @ file:///C:/b/abs_b505trsapr/croot/aiohappyeyeballs_1725434036096/work
 aiohttp @ file:///C:/b/abs_13j6efxjb7/croot/aiohttp_1725529348885/work
